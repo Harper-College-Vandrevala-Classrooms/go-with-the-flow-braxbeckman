@@ -38,12 +38,25 @@ void HeatFlow::tick()
   for (int i = 0; i < currentSize; i++)
   {
     int currentCell{}, prevCell{}, nextCell{};
-    // loops temp to check the final cell rather than the
+    
+    // loops temp to check the final cell rather than the previous one; simulating a looped heat pipe
     if (i == 0)
     {
       currentCell = i;
       prevCell = (currentSize - 1);
       nextCell = i + 1;
+    }
+    else if (i == currentSize)
+    {
+      currentCell = i;
+      prevCell = (i - 1);
+      nextCell = 0;
+    }
+    else
+    {
+      currentCell = i;
+      prevCell = (i - 1);
+      nextCell = (i + 1);
     }
 
 
@@ -56,10 +69,11 @@ void HeatFlow::tick()
     {
       newPipe[currentCell] =
           (heatPipe[currentCell] + (k * (heatPipe[nextCell] - (2 * heatPipe[currentCell]) +
-                                         heatPipe[prevCell]))); // this needs to incorprate //n//, or time, but
+                                         heatPipe[prevCell])));
     }
     std::cout << "newPipe[" << i << "] = " << newPipe[i] << std::endl;
-  } // idk how cause it is 2 am. tommorrow me issue
+    std::cout << "heatPipe[" << i << "] = " << heatPipe[i] << std::endl << std::endl;
+  }
 
   for (int i = 0; i < currentSize; i++)
   {
