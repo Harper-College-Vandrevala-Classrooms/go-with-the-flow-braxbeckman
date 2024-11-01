@@ -6,22 +6,22 @@ using namespace std;
 
 int main()
 {
-   HeatFlow h;
-   h.displayPipe();
-   sleep(3);
-   h.tick();
-   h.displayPipe();
-   sleep(3);
-   h.tick();
-   h.displayPipe();
-   sleep(3);
-   h.tick();
-   h.displayPipe();
-   sleep(3);
-   h.tick();
-   h.displayPipe();
-   sleep(3);
-   h.tick();
-   h.displayPipe();
-   sleep(3);
+  HeatFlow h;
+  h.displayPipe();
+  sleep(3);
+  h.tick();
+  h.displayPipe();
+  sleep(3);
+  h.tick();
+  h.displayPipe();
+  sleep(3);
+  h.tick();
+  h.displayPipe();
+  sleep(3);
+  h.tick();
+  h.displayPipe();
+  sleep(3);
+  h.tick();
+  h.displayPipe();
+  sleep(3);
 }
