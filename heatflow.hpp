@@ -6,6 +6,7 @@ class HeatFlow
 {
 public:
   HeatFlow(int desiredSize = 5, double k = 0.1);
+  ~HeatFlow();
   void displayPipe();
   // int &setArrSize(int *arrPtr, int currentSize, int desiredSize);
   void tick();

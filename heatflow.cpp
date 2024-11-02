@@ -27,6 +27,11 @@ HeatFlow::HeatFlow(int desiredSize, double k)
   }
 }
 
+HeatFlow::~HeatFlow()
+{
+  delete pipePtr;
+}
+
 void HeatFlow::addSource(int pos)
 {
   sources.push_back(pos);
@@ -87,6 +92,7 @@ void HeatFlow::tick()
   {
     *(pipePtr + i) = *(newPipePtr + i);
   }
+  delete[] newPipePtr;
 }
 
 std::string HeatFlow::prettyPrint()
